@@ -1,26 +1,43 @@
+function getRND() {
+  return Math.floor(Math.random() * 4);
+}
+
+const data = [
+	{x: 'Ariana', pl : getRND(), com: getRND(), life: getRND(), other: getRND()},
+	{x: 'Cindy', pl : getRND(), com: getRND(), life: getRND(), other: getRND()},
+	{x: 'Jacob', pl : getRND(), com: getRND(), life: getRND(), other: getRND()}, 
+	{x: 'Lauren', pl : getRND(), com: getRND(), life: getRND(), other: 0}, 
+	{x: 'Marshall', pl : getRND(), com: getRND(), life: getRND(), other: getRND()}, 
+	{x: 'Zach', pl : getRND(), com: getRND(), life: getRND(), other: getRND()}
+];
+
 const chart_data = {
 	labels: ['Ariana', 'Cindy', 'Jacob', 'Lauren', 'Marshall', 'Zach'],
 	datasets: [{
 		label: 'Personal Lines',
-		data: [100, 20],
+		data: data,
+		backgroundColor: 'rgb(255, 99, 132)',
 		parsing: {
 			yAxisKey: 'pl'
 		}
 	}, {
 		label: 'Commercial',
-		data: [50, 10],
+		data: data,
+		backgroundColor: 'rgb(54, 162, 235)',
 		parsing: {
 			yAxisKey: 'com'
 		}
 	}, {
 		label: 'Life',
-		data: [50, 10],
+		data: data,
+		backgroundColor: 'rgb(255, 205, 86)',
 		parsing: {
 			yAxisKey: 'life'
 		}
 	}, {
 		label: 'Other',
-		data: [100, 500], 
+		data: data,
+		backgroundColor: 'rgb(75, 192, 192)',
 		parsing: {
 			yAxisKey: 'other'
 		}
@@ -36,7 +53,7 @@ const myChart = new Chart(ctx, {
     plugins: {
       title: {
         display: true,
-        text: 'Chart.js Bar Chart - Stacked'
+        text: 'Production Log'
       },
     },
     responsive: true,
