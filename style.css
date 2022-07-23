@@ -1,4 +1,6 @@
 html, body {
-  height: 500px;
-  width: 250px;
+
+  height:max-content;
+  width:max-content;
+
 }

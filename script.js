@@ -1,16 +1,21 @@
+
+
+//Temporary random function
 function getRND() {
   return Math.floor(Math.random() * 4);
 }
 
+//actual chart data
 const data = [
-	{x: 'Ariana', pl : getRND(), com: getRND(), life: getRND(), other: getRND()},
-	{x: 'Cindy', pl : getRND(), com: getRND(), life: getRND(), other: getRND()},
-	{x: 'Jacob', pl : getRND(), com: getRND(), life: getRND(), other: getRND()}, 
-	{x: 'Lauren', pl : getRND(), com: getRND(), life: getRND(), other: 0}, 
-	{x: 'Marshall', pl : getRND(), com: getRND(), life: getRND(), other: getRND()}, 
-	{x: 'Zach', pl : getRND(), com: getRND(), life: getRND(), other: getRND()}
+	{x: 'Ariana', pl : 5, com: 0, life: 0, other: 1},
+	{x: 'Cindy', pl : 3, com: 0, life: 0, other: 0},
+	{x: 'Jacob', pl : 1, com: 0, life: 2, other: 0}, 
+	{x: 'Lauren', pl : 1, com: 2, life: 0, other: 0}, 
+	{x: 'Marshall', pl : 5, com: 2, life: 4, other: 3}, 
+	{x: 'Zach', pl : 1, com: 0, life: 2, other: 1}
 ];
 
+//Data structure to be entered into the chart
 const chart_data = {
 	labels: ['Ariana', 'Cindy', 'Jacob', 'Lauren', 'Marshall', 'Zach'],
 	datasets: [{
@@ -44,7 +49,7 @@ const chart_data = {
 	}]
 }
 
-
+//Generate the chart
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
   type: 'bar',
